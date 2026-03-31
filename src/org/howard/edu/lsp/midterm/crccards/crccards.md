@@ -1,0 +1,1 @@
+TaskManager collaborates with Task because it must store and filter Task objects to fulfill its duties. The Task class does not collaborate with TaskManager because its responsibilities involve only internal data management. Task operates independently and does not require knowledge of the manager class.
