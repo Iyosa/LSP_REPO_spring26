@@ -36,6 +36,8 @@ Collaborators: Order
 Class: OrderProcessor (Controller)
 
 Responsibilities:
-Coordinates the order processing 
-Does the calculations, storage, and notifications 
+Receive an Order object to process
+Delegate calculations to TaxCalculator
+Delegate saving to OrderRepository
+Delegate alerts to NotificationService
 Collaborators: Order, TaxCalculator, OrderRepository, NotificationService
