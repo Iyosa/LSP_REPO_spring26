@@ -25,7 +25,7 @@ public class IntegerSetTest {
     void testAdd() {
         set1.add(1);
         Assertions.assertEquals(1, set1.length()); // Normal case
-        set1.add(1); 
+        set1.add(1);
         Assertions.assertEquals(1, set1.length()); // Edge case: duplicate values
     }
 
@@ -35,7 +35,7 @@ public class IntegerSetTest {
         set1.add(1);
         set1.add(2);
         set1.remove(1); // Normal case
-        Assertions.assertFalse(set1.contains(1)); 
+        Assertions.assertFalse(set1.contains(1));
         set1.remove(5); // Edge case: value not present
         Assertions.assertEquals(1, set1.length());
     }
@@ -45,7 +45,7 @@ public class IntegerSetTest {
     void testClear() {
         set1.add(1);
         set1.clear(); // Normal case
-        Assertions.assertTrue(set1.isEmpty()); 
+        Assertions.assertTrue(set1.isEmpty());
         set1.clear(); // Edge case: clearing an already empty set
         Assertions.assertEquals(0, set1.length());
     }
@@ -113,9 +113,9 @@ public class IntegerSetTest {
         set2.add(2);
         IntegerSet result = set1.union(set2);
         Assertions.assertTrue(result.contains(1) && result.contains(2)); // Normal case
-        
+
         IntegerSet emptySet = new IntegerSet();
-        IntegerSet result2 = set1.union(emptySet); 
+        IntegerSet result2 = set1.union(emptySet);
         Assertions.assertEquals("[1]", result2.toString()); // Edge case: with empty set
     }
 
@@ -127,7 +127,7 @@ public class IntegerSetTest {
         set2.add(2);
         set2.add(3);
         Assertions.assertEquals("[2]", set1.intersect(set2).toString()); // Normal case
-        
+
         set1.clear();
         set1.add(10);
         Assertions.assertTrue(set1.intersect(set2).isEmpty()); // Edge case: no common elements
@@ -141,7 +141,7 @@ public class IntegerSetTest {
         set2.add(1);
         set2.add(2);
         Assertions.assertTrue(set1.diff(set2).isEmpty()); // Edge case: identical sets
-        
+
         set2.remove(1); // set2 is now [2]
         Assertions.assertEquals("[1]", set1.diff(set2).toString()); // Normal case
     }
@@ -153,7 +153,7 @@ public class IntegerSetTest {
         set2.add(1);
         set2.add(2);
         Assertions.assertEquals("[2]", set1.complement(set2).toString()); // Normal case
-        
+
         set1.clear();
         set1.add(10); // set1={10}, set2={1, 2}
         Assertions.assertEquals("[1, 2]", set1.complement(set2).toString()); // Edge case: disjoint sets
@@ -174,9 +174,9 @@ public class IntegerSetTest {
         set1.add(1);
         set1.add(2);
         Assertions.assertEquals("[1, 2, 3]", set1.toString()); // Normal case
-        
+
         set2.clear();
         // Edge case: empty set. (Verify if your toString returns "[]" or "[")
-        Assertions.assertEquals("[]", set2.toString()); 
+        Assertions.assertEquals("[]", set2.toString());
     }
 }
