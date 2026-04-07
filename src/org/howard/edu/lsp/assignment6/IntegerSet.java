@@ -1,22 +1,26 @@
-package org.howard.edu.lsp.assignment5;
+package org.howard.edu.lsp.assignment6;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
 /**
- * A class that represents a mathematical set of integers using an ArrayList
- * The set cannot contain duplicates and supports standard set operations
+ * A class that represents a mathematical set of integers using an ArrayList The
+ * set cannot contain duplicates and supports standard set operations
  */
 public class IntegerSet {
-    /** Internal storage for set elements */
+
+    /**
+     * Internal storage for set elements
+     */
     private ArrayList<Integer> elements;
 
     /**
-     * Custom exception for IntegerSet operations
-     * Extends RuntimeException so method signatures remain unchanged
+     * Custom exception for IntegerSet operations Extends RuntimeException so
+     * method signatures remain unchanged
      */
     public static class IntegerSetException extends RuntimeException {
+
         public IntegerSetException(String message) {
             super(message);
         }
@@ -38,7 +42,7 @@ public class IntegerSet {
 
     /**
      * Returns the number of elements in the set
-     * 
+     *
      * @return the size of the set
      */
     public int length() {
@@ -47,7 +51,7 @@ public class IntegerSet {
 
     /**
      * Returns true if the set contains no elements
-     * 
+     *
      * @return true if empty, false otherwise
      */
     public boolean isEmpty() {
@@ -56,7 +60,7 @@ public class IntegerSet {
 
     /**
      * Adds an item to the set if it is not already present
-     * 
+     *
      * @param value the integer to add
      */
     public void add(int value) {
@@ -67,7 +71,7 @@ public class IntegerSet {
 
     /**
      * Removes an item from the set if it exists
-     * 
+     *
      * @param value the integer to remove
      */
     public void remove(int value) {
@@ -76,7 +80,7 @@ public class IntegerSet {
 
     /**
      * Returns true if the set contains the specified value
-     * 
+     *
      * @param value the integer to check for
      * @return true if the value is present
      */
@@ -86,7 +90,7 @@ public class IntegerSet {
 
     /**
      * Returns the largest item in the set
-     * 
+     *
      * @return the maximum integer in the set
      * @throws IntegerSetException if the set is empty
      */
@@ -99,7 +103,7 @@ public class IntegerSet {
 
     /**
      * Returns the smallest item in the set
-     * 
+     *
      * @return the minimum integer in the set
      * @throws IntegerSetException if the set is empty
      */
@@ -111,25 +115,26 @@ public class IntegerSet {
     }
 
     /**
- * Returns true if both sets contain exactly the same elements
- * The comparison is order-independent.
- * * @param b the IntegerSet to compare with
- * @return true if the sets are equal, false otherwise
- */
-public boolean equals(IntegerSet b) {
-    // Check if the lengths are different
-    if (this.length() != b.length()) {
-        return false;
-    }
-
-    // Check if every element in this set is present in the other set
-    for (int num : this.elements) {
-        if (!b.contains(num)) {
+     * Returns true if both sets contain exactly the same elements The
+     * comparison is order-independent.
+     *
+     * * @param b the IntegerSet to compare with
+     * @return true if the sets are equal, false otherwise
+     */
+    public boolean equals(IntegerSet b) {
+        // Check if the lengths are different
+        if (this.length() != b.length()) {
             return false;
         }
+
+        // Check if every element in this set is present in the other set
+        for (int num : this.elements) {
+            if (!b.contains(num)) {
+                return false;
+            }
+        }
+        return true;
     }
-    return true;
-}
 
     @Override
     public int hashCode() {
@@ -138,68 +143,73 @@ public boolean equals(IntegerSet b) {
 
     /**
      * Returns a new set containing all elements in either set
-     * 
+     *
      * @param intSetb the set to union with
      * @return a new IntegerSet representing the union
      */
     public IntegerSet union(IntegerSet intSetb) {
         IntegerSet result = new IntegerSet();
-        for (int num : this.elements)
+        for (int num : this.elements) {
             result.add(num);
-        for (int num : intSetb.elements)
+        }
+        for (int num : intSetb.elements) {
             result.add(num);
+        }
         return result;
     }
 
     /**
      * Returns a new set containing only elements common to both sets
-     * 
+     *
      * @param intSetb the set to intersect with
      * @return a new IntegerSet representing the intersection
      */
     public IntegerSet intersect(IntegerSet intSetb) {
         IntegerSet result = new IntegerSet();
         for (int num : this.elements) {
-            if (intSetb.contains(num))
+            if (intSetb.contains(num)) {
                 result.add(num);
+            }
         }
         return result;
     }
 
     /**
      * Returns a new set containing elements in the current set but not in b
-     * 
+     *
      * @param intSetb the set to differentiate with
      * @return a new IntegerSet representing the difference
      */
     public IntegerSet diff(IntegerSet intSetb) {
         IntegerSet result = new IntegerSet();
         for (int num : this.elements) {
-            if (!intSetb.contains(num))
+            if (!intSetb.contains(num)) {
                 result.add(num);
+            }
         }
         return result;
     }
 
     /**
      * Returns a new set containing elements in b but not in the current set
-     * 
+     *
      * @param intSetb the set to find the complement of
      * @return a new IntegerSet representing the complement
      */
     public IntegerSet complement(IntegerSet intSetb) {
         IntegerSet result = new IntegerSet();
         for (int num : intSetb.elements) {
-            if (!this.contains(num))
+            if (!this.contains(num)) {
                 result.add(num);
+            }
         }
         return result;
     }
 
     /**
-     * Returns a string representation of the set in ascending order
-     * Format: [1, 2, 3]
-     * 
+     * Returns a string representation of the set in ascending order Format: [1,
+     * 2, 3]
+     *
      * @return formatted string of the set
      */
     @Override
