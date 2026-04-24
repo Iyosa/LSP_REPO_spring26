@@ -1,0 +1,3 @@
+# Design Explanation
+
+The `Report` class uses the `generateReport()` method as a blueprint to set up a fixed, step-by-step workflow: load the data, then format the header, body, and footer. The child classes, `StudentReport` and `CourseReport`, just fill in the specific details for those individual steps without being able to change the actual order of the process. Because of this design, the driver class can easily loop through a mixed list of different reports and simply call `generateReport()` on each one. This is a great example of polymorphism in action, making the system incredibly easy to expand later on.

@@ -1,0 +1,5 @@
+# Question 4: AI Perspective Reflection
+
+Over the course of this semester, my perspective on using AI in programming has shifted significantly. I initially disliked using AI for coding, particularly after experiencing a few "vibe coding" incidents earlier this year. However, I have grown to appreciate the substantial workload it can offload. For example, I recently deployed a personal Notion widget that plays music through an aesthetic interface. By collaborating with AI to generate the HTML layout while I managed the UI/UX design, I was able to focus on my overall vision and skip the tedious aspects of coding while still maintaining exact control over the final design.
+
+In the future, I plan to use AI primarily as a tool for reviewing my work and automating testing, as I have seen how effective it can be in those areas. While I intend to maintain full creative control over my code, I am now comfortable letting AI handle repetitive or boilerplate tasks. This approach allows me to balance efficiency with the high standard of design and logic I want to uphold in my future programming and coursework.

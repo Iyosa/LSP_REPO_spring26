@@ -1,0 +1,22 @@
+package org.howard.edu.lsp.finalexam.question2;
+
+public abstract class Report {
+
+    public final void generateReport() {
+        loadData();
+        System.out.println("=== HEADER ===");
+        formatHeader();
+        System.out.println("=== BODY ===");
+        formatBody();
+        System.out.println("=== FOOTER ===");
+        formatFooter();
+    }
+
+    protected abstract void loadData();
+
+    protected abstract void formatHeader();
+
+    protected abstract void formatBody();
+
+    protected abstract void formatFooter();
+}
